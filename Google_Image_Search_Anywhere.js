@@ -40,7 +40,7 @@ var MESSAGE = {
 
 var URL = {
     imageSearch:    "https://www.google.com/searchbyimage?&image_url=",
-    formSearch:     "http://www.google.ca/searchbyimage/upload",
+    formSearch:     "http://www.google.com/searchbyimage/upload",
 };
 
 /*=============*\
