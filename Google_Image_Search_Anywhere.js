@@ -1,12 +1,12 @@
 // ==UserScript==
-// @name        Google Image Search Anywhere
+// @name        Reverse Google Image Search Anywhere
 // @namespace   matthewn4444
 // @description Dragging any image allows you to do a google image search.
 // @include     *
 // @exclude     *www.google.*/imghp*
 // @exclude     *www.google.*/search?*site=imghp&*
 // @exclude     *www.google.*/search?tbs=sbi:*
-// @version     1
+// @version     1.1
 // ==/UserScript==
 
 if (!document || !document.body || top !== self) return;
@@ -336,15 +336,18 @@ function mouseMove(e) {
 }
 
 function processDragStart(event) {
-    if (event.target.tagName === "IMG") {
-        VAR.dragImgSrc = event.target.src;
+    var el = event.target;
+    if (el.tagName === "IMG") {
+        VAR.dragImgSrc = el.src;
     } else {
-        var imgs = event.target.getElementsByTagName('img');
+        var imgs = el.getElementsByTagName('img');
         if (imgs.length > 0) {
             VAR.dragImgSrc = imgs[0].src;
         } else {
-            detachDragEvents();
-            return;
+            if (el.tagName !== "A" || el.getAttribute("href") == "") {
+                detachDragEvents();
+                return;
+            }
         }
     }
     show();
