@@ -2,14 +2,14 @@
 // @name        Reverse Google Image Search Anywhere
 // @namespace   matthewn4444
 // @description Dragging any image allows you to do a google image search.
+// @updateURL   https://github.com/matthewn4444/Google-Image-Search-Anywhere/raw/master/Google_Image_Search_Anywhere.user.js
+// @downloadURL https://github.com/matthewn4444/Google-Image-Search-Anywhere/raw/master/Google_Image_Search_Anywhere.user.js
 // @include     *
 // @exclude     *www.google.*/imghp*
 // @exclude     *www.google.*/search?*site=imghp&*
 // @exclude     *www.google.*/search?tbs=sbi:*
-// @version     1.1
+// @version     2015.12.17
 // ==/UserScript==
-
-if (!document || !document.body || top !== self) return;
 
 /*=============*\
 |*  CONSTANTS  *|
